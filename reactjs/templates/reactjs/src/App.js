@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { DigitalMenu } from "./components/DigitalMenu";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import queryString from "query-string";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    let info = {};
+    try {
+      let qry = queryString.parse(window.location.search);
+      let str = atob(qry.q);
+      info = JSON.parse(str);
+    } catch (e) {}
+    this.state = info;
+  }
+
+  render() {
+    return <DigitalMenu restId={this.state.restId} group={this.state.group} />;
+  }
 }
 
 export default App;

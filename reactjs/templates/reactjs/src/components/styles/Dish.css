@@ -1,0 +1,45 @@
+.dish-items {
+    display: none;
+    list-style: none;
+    padding-left: 0;
+}
+
+.dish-items.open {
+    display: block;
+}
+
+.dish-items li {
+}
+
+.dish-bucket.show {
+    display: block;
+}
+
+.dish-bucket {
+    display: none;
+    background: rgba(255, 255, 255, 1);
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(247, 250, 250, 1) 25%,
+        rgba(157, 245, 195, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#9df5c3', GradientType=0);
+}
+
+.item-details {
+    display: none;
+}
+
+.item-details.show {
+    display: block;
+}
+
+.item-span {
+    background: #f2f2f2;
+}
+
+input[type="number"] {
+    width: 4rem;
+    text-align: center;
+}
